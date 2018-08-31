@@ -41,22 +41,37 @@ public class AlbertList<T> implements iList<T>, iStack<T>, iQueue<T> {
 		this.length = length;
 	}
 
+	// Encolar
 	@Override
 	public void equeue(T type) {
-		// TODO Auto-generated method stub
+		Node<T> newNode = new Node<T>(type, length);
+
+		if (this.isEmpty()) {
+			this.head = newNode;
+			this.end = newNode;
+			length = 1;
+		} else {
+			this.end.setNextElement(newNode);
+			this.end = newNode;
+			this.length++;
+		}
 
 	}
 
 	@Override
-	public Node<T> frond() {
-		// TODO Auto-generated method stub
-		return null;
+	public Node<T> front() {
+		return head;
 	}
 
+	// Desencolar
 	@Override
-	public void dequeue() {
-		// TODO Auto-generated method stub
+	public Node<T> dequeue() {
+		Node<T> first = null;
+		first = head;
+		head = head.getNextElement();
 
+		length--;
+		return first;
 	}
 
 	@Override
@@ -64,7 +79,7 @@ public class AlbertList<T> implements iList<T>, iStack<T>, iQueue<T> {
 		Node<T> newNode = new Node<T>(type, length);
 
 		if (end == null) {
-			head = newNode;
+			// head = newNode;
 			end = newNode;
 			length++;
 		} else {
@@ -111,26 +126,36 @@ public class AlbertList<T> implements iList<T>, iStack<T>, iQueue<T> {
 
 	@Override
 	public int length() {
-		// TODO Auto-generated method stub
-		return 0;
+		return length;
 	}
 
 	@Override
 	public void display() {
-
 		Node aux = head;
-
 		while (aux != null) {
 			System.out.println(aux.getType());
 			aux = aux.getNextElement();
 		}
-
 	}
 
 	@Override
 	public void removeIndex(int index) {
-		// TODO Auto-generated method stub
+		if (!this.isEmpty()) {
+			Node<T> aux = head;
+			while (aux != null) {
 
+				if (length == 1 && head.getIndex() == index) {
+					head = null;
+					end = null;
+				}
+				if (aux.getIndex() == index) {
+					aux.getPreviousElement().setNextElement(aux.getNextElement());
+					aux.getNextElement().setPreviousElement(aux.getPreviousElement());
+				}
+				aux = aux.getNextElement();
+			}
+
+		}
 	}
 
 	@Override

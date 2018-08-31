@@ -6,7 +6,9 @@ public interface iQueue<T> {
 
 	public void equeue(T type);
 
-	public Node<T> frond();
+	public Node<T> front();
 
-	public void dequeue();
+	public Node<T> dequeue();
+
+	public boolean isEmpty();
 }
