@@ -9,4 +9,8 @@ public interface iStack<T> {
 	public Node<T> pop();
 
 	public boolean isEmpty();
+
+	public int length();
+
+	public Node<T> top();
 }

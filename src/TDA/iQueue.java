@@ -11,4 +11,7 @@ public interface iQueue<T> {
 	public Node<T> dequeue();
 
 	public boolean isEmpty();
+
+	public int length();
+
 }

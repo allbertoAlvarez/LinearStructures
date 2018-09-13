@@ -5,14 +5,14 @@ public class Node<T> {
 	private T type;
 	private Node<T> nextElement;
 	private Node<T> previousElement;
-	private int index;
+	// private int index;
 
-	public Node(T type, int index) {
+	public Node(T type) {
 		super();
 		this.type = type;
 		this.nextElement = null;
 		this.previousElement = null;
-		this.index = 0;
+		// this.index = 0;
 	}
 
 	public T getType() {
@@ -31,13 +31,13 @@ public class Node<T> {
 		this.nextElement = nextElement;
 	}
 
-	public int getIndex() {
-		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
-	}
+	// public int getIndex() {
+	// return index;
+	// }
+	//
+	// public void setIndex(int index) {
+	// this.index = index;
+	// }
 
 	public Node<T> getPreviousElement() {
 		return previousElement;
