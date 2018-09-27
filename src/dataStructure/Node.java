@@ -1,4 +1,4 @@
-package Structure;
+package dataStructure;
 
 public class Node<T> {
 

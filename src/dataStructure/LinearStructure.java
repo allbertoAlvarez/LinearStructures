@@ -1,7 +1,7 @@
-package Structure;
+package dataStructure;
 
-import Exception.NodeNotExistException;
-import Exception.emptyListException;
+import exceptions.NodeNotExistException;
+import exceptions.emptyListException;
 import TDA.iList;
 import TDA.iQueue;
 import TDA.iStack;
@@ -11,20 +11,15 @@ public class LinearStructure<T> implements iStack<T>, iList<T>, iQueue<T> {
 	private Node<T> head;
 	private Node<T> end;
 	private int length;
-	private T[] arreglo;
 
 	public LinearStructure() {
 		super();
 		this.head = null;
 		this.end = null;
 		this.length = 0;
-		arreglo = (T[]) new Object[10];
-	}
 
-	public T[] getArreglo() {
-		return arreglo;
 	}
-
+	
 	@Override
 	public void addFirst(T type) {
 		Node<T> newNode = new Node<T>(type);
@@ -54,12 +49,14 @@ public class LinearStructure<T> implements iStack<T>, iList<T>, iQueue<T> {
 			this.head = newNode;
 			this.end = newNode;
 			length++;
+			
 		} else {
 			newNode.setNextElement(null);
 			newNode.setPreviousElement(end);
 			end.setNextElement(newNode);
 			end = newNode;
 			length++;
+			
 		}
 
 	}
@@ -250,7 +247,7 @@ public class LinearStructure<T> implements iStack<T>, iList<T>, iQueue<T> {
 	}
 
 	@Override
-	public Node<T> searchFirts() {
+	public Node<T> searchFirst() {
 		return head;
 	}
 

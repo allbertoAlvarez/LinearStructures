@@ -1,6 +1,6 @@
 package TDA;
 
-import Structure.Node;
+import dataStructure.Node;
 
 public interface iStack<T> {
 

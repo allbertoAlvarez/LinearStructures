@@ -4,10 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import Exception.NodeNotExistException;
-import Exception.emptyListException;
-import Structure.LinearStructure;
-import Structure.Node;
+import dataStructure.LinearStructure;
+import dataStructure.Node;
+import exceptions.NodeNotExistException;
+import exceptions.emptyListException;
 import TDA.iList;
 import TDA.iQueue;
 import TDA.iStack;
@@ -387,7 +387,7 @@ class testAlbertList {
 		list.addEnd(c);
 		list.addEnd(f);
 
-		assertTrue(list.searchFirts().getType().equals(a));
+		assertTrue(list.searchFirst().getType().equals(a));
 
 		try {
 			list.deleteFirst();
@@ -397,7 +397,7 @@ class testAlbertList {
 			e1.printStackTrace();
 		}
 
-		assertTrue(list.searchFirts().getType().equals(b));
+		assertTrue(list.searchFirst().getType().equals(b));
 
 		try {
 			list.deleteFirst();
@@ -408,7 +408,7 @@ class testAlbertList {
 			e1.printStackTrace();
 		}
 
-		assertTrue(list.searchFirts().getType().equals(f));
+		assertTrue(list.searchFirst().getType().equals(f));
 
 	}
 

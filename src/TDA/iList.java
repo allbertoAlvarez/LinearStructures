@@ -1,8 +1,8 @@
 package TDA;
 
-import Exception.NodeNotExistException;
-import Exception.emptyListException;
-import Structure.Node;
+import exceptions.NodeNotExistException;
+import exceptions.emptyListException;
+import dataStructure.Node;
 
 public interface iList<T> {
 
@@ -28,7 +28,7 @@ public interface iList<T> {
 
 	public void deleteIndex(int index) throws emptyListException;
 
-	public Node<T> searchFirts();
+	public Node<T> searchFirst();
 
 	public Node<T> searchEnd();
 
