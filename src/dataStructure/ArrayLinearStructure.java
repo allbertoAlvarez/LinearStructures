@@ -1,14 +1,14 @@
 package dataStructure;
 
 import java.lang.reflect.Array;
+import TDA.iHashSet;
+import TDA.iHeap;
 
-import TDA.iHash;
-
-public class ArrayLinearStructure<T> implements iHash<T> {
+public class ArrayLinearStructure<T> implements iHashSet<T> {
 
 	T[] array;
-
 	@SuppressWarnings("unchecked")
+	
 	public ArrayLinearStructure(T c , int length) {
 		array = (T[]) Array.newInstance(c.getClass(), length);
 	}
@@ -59,5 +59,7 @@ public class ArrayLinearStructure<T> implements iHash<T> {
 	public void agregar(LinearStructure c) {
 		array[0] = (T) c;
 	}
+
+	
 
 }

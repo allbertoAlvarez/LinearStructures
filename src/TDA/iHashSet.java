@@ -2,7 +2,7 @@ package TDA;
 
 import dataStructure.Node;
 
-public interface iHash<T> {
+public interface iHashSet<T> {
 
 	public boolean isEmpty();
 
@@ -13,8 +13,6 @@ public interface iHash<T> {
 	public void tableDelete(int Key);
 
 	public T tableRetrieve(int key);
-
+	
 	public int hashFunction(int key);
-
-
 }
